@@ -4,7 +4,6 @@ import (
 	"testing"
 )
 
-// func largestAltitude(gain []int) int {
 func Test_largestAltitude(t *testing.T) {
 	tests := []struct {
 		name string
