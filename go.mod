@@ -1,4 +1,4 @@
-module leetcode-go
+module github.com/lancelote/leetcode-go
 
 go 1.23
 
