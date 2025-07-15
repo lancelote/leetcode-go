@@ -1,6 +1,7 @@
 package btree
 
 import (
+	"github.com/google/go-cmp/cmp"
 	"testing"
 )
 
@@ -47,5 +48,25 @@ func TestNewTreeFromSlice(t *testing.T) {
 
 	if root.Right.Left.Val != 5 {
 		t.Errorf("fifth node val want=%d, got=%d", 5, root.Right.Left.Val)
+	}
+}
+
+func TestSliceFromTree(t *testing.T) {
+	n1 := newTreeNode(1)
+	n2 := newTreeNode(2)
+	n3 := newTreeNode(3)
+	n4 := newTreeNode(4)
+	n5 := newTreeNode(5)
+
+	n1.Left = n2
+	n1.Right = n3
+	n2.Right = n4
+	n3.Left = n5
+
+	got := SliceFromTree(n1)
+	want := []any{1, 2, 3, nil, 4, 5}
+
+	if diff := cmp.Diff(want, got); diff != "" {
+		t.Error(diff)
 	}
 }

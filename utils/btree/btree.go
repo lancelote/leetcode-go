@@ -42,3 +42,29 @@ func NewTreeFromSlice(values []any) *TreeNode {
 
 	return root
 }
+
+func SliceFromTree(root *TreeNode) []any {
+	result := []any{}
+	q := []*TreeNode{root}
+
+	for len(q) > 0 {
+		node := q[0]
+		q = q[1:]
+
+		if node == nil {
+			result = append(result, nil)
+			continue
+		}
+
+		result = append(result, node.Val)
+		q = append(q, node.Left)
+		q = append(q, node.Right)
+	}
+
+	// trim nils
+	for len(result) > 0 && result[len(result)-1] == nil {
+		result = result[:len(result)-1]
+	}
+
+	return result
+}
