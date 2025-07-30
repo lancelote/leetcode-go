@@ -18,9 +18,9 @@ func Test_newTreeNode(t *testing.T) {
 	}
 }
 
-func TestNewTreeFromSlice(t *testing.T) {
+func TestTreeFromSlice(t *testing.T) {
 	slice := []any{1, 2, 3, nil, 4, 5}
-	root := NewTreeFromSlice(slice)
+	root := TreeFromSlice(slice)
 
 	if root.Val != 1 {
 		t.Errorf("root val want=%d, got=%d", 1, root.Val)

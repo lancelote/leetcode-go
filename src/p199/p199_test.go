@@ -36,7 +36,7 @@ func Test_rightSideView(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			root := btree.NewTreeFromSlice(tt.slice)
+			root := btree.TreeFromSlice(tt.slice)
 			got := rightSideView(root)
 
 			if diff := cmp.Diff(tt.want, got); diff != "" {

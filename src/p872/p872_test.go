@@ -28,8 +28,8 @@ func Test_leafSimilar(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			root1 := btree.NewTreeFromSlice(tt.slice1)
-			root2 := btree.NewTreeFromSlice(tt.slice2)
+			root1 := btree.TreeFromSlice(tt.slice1)
+			root2 := btree.TreeFromSlice(tt.slice2)
 
 			got := leafSimilar(root1, root2)
 			if got != tt.want {

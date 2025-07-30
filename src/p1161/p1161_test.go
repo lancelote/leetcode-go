@@ -25,7 +25,7 @@ func Test_maxLevelSum(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			root := btree.NewTreeFromSlice(tt.slice)
+			root := btree.TreeFromSlice(tt.slice)
 			got := maxLevelSum(root)
 
 			if got != tt.want {

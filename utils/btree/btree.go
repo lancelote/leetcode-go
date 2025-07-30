@@ -12,7 +12,7 @@ func newTreeNode(val int) *TreeNode {
 	}
 }
 
-func NewTreeFromSlice(values []any) *TreeNode {
+func TreeFromSlice(values []any) *TreeNode {
 	if len(values) == 0 || values[0] == nil {
 		return nil
 	}

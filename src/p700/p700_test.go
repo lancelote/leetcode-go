@@ -29,7 +29,7 @@ func Test_searchBST(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			root := btree.NewTreeFromSlice(tt.slice)
+			root := btree.TreeFromSlice(tt.slice)
 			gotRoot := searchBST(root, tt.val)
 			got := btree.SliceFromTree(gotRoot)
 

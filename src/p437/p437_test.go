@@ -34,7 +34,7 @@ func Test_pathSum(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			root := btree.NewTreeFromSlice(tt.slice)
+			root := btree.TreeFromSlice(tt.slice)
 			got := pathSum(root, tt.targetSum)
 
 			if got != tt.want {

@@ -29,7 +29,7 @@ func Test_deleteNode(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			root := btree.NewTreeFromSlice(tt.inSlice)
+			root := btree.TreeFromSlice(tt.inSlice)
 			got := deleteNode(root, tt.key)
 			gotSlice := btree.SliceFromTree(got)
 
