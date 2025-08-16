@@ -33,7 +33,7 @@ func Test_successfulPairs(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			got := successfulPairs(tt.spells, tt.potions, tt.success)
 			if diff := cmp.Diff(tt.want, got); diff != "" {
-				t.Errorf(diff)
+				t.Error(diff)
 			}
 		})
 	}
