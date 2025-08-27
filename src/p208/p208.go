@@ -6,7 +6,7 @@ type Node struct {
 }
 
 func newNode() *Node {
-	return &Node{children: make(map[rune]*Node), end: false}
+	return &Node{children: make(map[rune]*Node)}
 }
 
 type Trie struct {
