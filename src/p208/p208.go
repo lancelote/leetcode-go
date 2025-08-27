@@ -44,7 +44,7 @@ func (this *Trie) Search(word string) bool {
 		node = nextNode
 	}
 
-	return node != nil && node.end
+	return node.end
 }
 
 func (this *Trie) StartsWith(prefix string) bool {
