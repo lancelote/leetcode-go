@@ -25,7 +25,14 @@ func Test_removeElement(t *testing.T) {
 			[]int{0, 1, 2, 2, 3, 0, 4, 2},
 			2,
 			5,
-			[]int{0, 1, 3, 0, 4},
+			[]int{0, 1, 4, 0, 3},
+		},
+		{
+			"empty",
+			[]int{},
+			0,
+			0,
+			[]int{},
 		},
 	}
 

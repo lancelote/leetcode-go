@@ -1,14 +1,17 @@
 package p27
 
 func removeElement(nums []int, val int) int {
-	k := 0
+	left := 0
+	right := len(nums)
 
-	for _, x := range nums {
-		if x != val {
-			nums[k] = x
-			k++
+	for left < right {
+		if nums[left] == val {
+			nums[left] = nums[right-1]
+			right--
+		} else {
+			left++
 		}
 	}
 
-	return k
+	return right
 }
