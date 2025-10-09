@@ -1,25 +1,18 @@
 package p45
 
 func jump(nums []int) int {
-	if len(nums) == 1 {
-		return 0
-	}
+	steps := 0
+	curEnd := 0
+	maxIdx := 0
 
-	count := 1
+	for i := 0; i < len(nums)-1; i++ {
+		maxIdx = max(maxIdx, i+nums[i])
 
-	i := 0
-	maxIdx := nums[0]
-
-	for maxIdx < len(nums)-1 {
-		nextMaxIdx := maxIdx
-		for j := i; j <= maxIdx; j++ {
-			nextMaxIdx = max(nextMaxIdx, j+nums[j])
+		if i == curEnd {
+			curEnd = maxIdx
+			steps++
 		}
-		i = maxIdx
-
-		maxIdx = nextMaxIdx
-		count++
 	}
 
-	return count
+	return steps
 }
