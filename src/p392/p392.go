@@ -1,14 +1,14 @@
 package p392
 
 func isSubsequence(s string, t string) bool {
-	var si, ti int
+	i, j := 0, 0
 
-	for si < len(s) && ti < len(t) {
-		if s[si] == t[ti] {
-			si++
+	for i < len(s) && j < len(t) {
+		if s[i] == t[j] {
+			i++
 		}
-		ti++
+		j++
 	}
 
-	return si == len(s)
+	return i == len(s)
 }
