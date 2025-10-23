@@ -4,7 +4,6 @@ import (
 	"testing"
 )
 
-// func maxArea(height []int) int {
 func Test_maxArea(t *testing.T) {
 	tests := []struct {
 		name   string
