@@ -19,7 +19,7 @@ jobs:
 
      - name: fmt
        run: |
-         files=$(gofmt -s -l .)
+         files=$(gofmt -l .)
          if [ -n "$files" ]; then
            echo "badly formatted files"
            echo "$files"
