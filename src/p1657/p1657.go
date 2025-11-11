@@ -19,7 +19,7 @@ func closeStrings(word1 string, word2 string) bool {
 		return false
 	}
 
-	for k, _ := range count1 {
+	for k := range count1 {
 		if _, ok := count2[k]; !ok {
 			return false
 		}
