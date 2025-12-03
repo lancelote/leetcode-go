@@ -22,8 +22,9 @@ func TestRandomizedSet(t *testing.T) {
 		t.Fatal("expect true on inserting first 2")
 	}
 
-	if rs.GetRandom() != 1 {
-		t.Fatal("first random element is not 1")
+	val := rs.GetRandom()
+	if val != 1 && val != 2 {
+		t.Fatal("first random element is not 1 or 2")
 	}
 
 	if rs.Remove(1) != true {
