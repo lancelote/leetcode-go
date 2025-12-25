@@ -23,6 +23,12 @@ func Test_minDistance(t *testing.T) {
 			"execution",
 			5,
 		},
+		{
+			"third",
+			"a",
+			"aa",
+			1,
+		},
 	}
 
 	for _, tt := range tests {
