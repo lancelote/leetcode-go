@@ -1,7 +1,7 @@
 package p1
 
 import (
-	"github.com/google/go-cmp/cmp"
+	"github.com/lancelote/leetcode-go/utils/slice"
 	"testing"
 )
 
@@ -35,7 +35,7 @@ func Test_twoSum(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := twoSum(tt.nums, tt.target)
-			if diff := cmp.Diff(tt.want, got); diff != "" {
+			if diff := slice.Diff(tt.want, got); diff != "" {
 				t.Error(diff)
 			}
 		})
