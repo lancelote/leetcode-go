@@ -22,7 +22,7 @@ func nDirections(n int, d Direction) []Direction {
 	return ds
 }
 
-func shortestPath(s1, s2 []int) []Direction {
+func shortestPath[T comparable](s1, s2 []T) []Direction {
 	// .I
 	// DR
 	rows, cols := len(s1)+1, len(s2)+1
@@ -74,7 +74,7 @@ func shortestPath(s1, s2 []int) []Direction {
 	return dpPath[rows-1][cols-1]
 }
 
-func areEqual(s1, s2 []int) bool {
+func areEqual[T comparable](s1, s2 []T) bool {
 	if len(s1) != len(s2) {
 		return false
 	}
@@ -88,7 +88,7 @@ func areEqual(s1, s2 []int) bool {
 	return true
 }
 
-func Diff(want []int, got []int) string {
+func Diff[T comparable](want, got []T) string {
 	if areEqual(want, got) {
 		return ""
 	}
@@ -100,18 +100,18 @@ func Diff(want []int, got []int) string {
 	for _, d := range path {
 		switch d {
 		case Same:
-			lines = append(lines, fmt.Sprintf("%d = %d", got[i1], want[i2]))
+			lines = append(lines, fmt.Sprintf("%v = %v", got[i1], want[i2]))
 			i1++
 			i2++
 		case Replace:
-			lines = append(lines, fmt.Sprintf("%d > %d", got[i1], want[i2]))
+			lines = append(lines, fmt.Sprintf("%v > %v", got[i1], want[i2]))
 			i1++
 			i2++
 		case Delete:
-			lines = append(lines, fmt.Sprintf("%d -", got[i1]))
+			lines = append(lines, fmt.Sprintf("%v -", got[i1]))
 			i1++
 		case Insert:
-			lines = append(lines, fmt.Sprintf("+ %d", want[i2]))
+			lines = append(lines, fmt.Sprintf("+ %v", want[i2]))
 			i2++
 		default:
 			panic("unreachable: unknown direction")
