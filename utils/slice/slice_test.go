@@ -23,6 +23,31 @@ func Test_Diff(t *testing.T) {
 			[]int{1, 2, 3, 4, 5},
 			"",
 		},
+		{
+			"one diff",
+			[]int{1},
+			[]int{2},
+			"2 > 1",
+		},
+		{
+			"complex diff",
+			[]int{1, 2, 3, 4, 5},
+			[]int{0, 3, 4, 5, 6},
+			`+ 1
+0 > 2
+3 = 3
+4 = 4
+5 = 5
+6 -`,
+		},
+		{
+			"just delete",
+			[]int{},
+			[]int{1, 2, 3},
+			`1 -
+2 -
+3 -`,
+		},
 	}
 
 	for _, tt := range tests {
