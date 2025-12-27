@@ -1,20 +1,11 @@
 package p198
 
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-
 func rob(nums []int) int {
-	twoDoors := 0
-	oneDoor := nums[0]
+	a, b := 0, 0
 
-	for i := 1; i < len(nums); i++ {
-		current := max(twoDoors+nums[i], oneDoor)
-		twoDoors, oneDoor = oneDoor, current
+	for _, n := range nums {
+		a, b = b, max(b, a+n)
 	}
 
-	return oneDoor
+	return b
 }
