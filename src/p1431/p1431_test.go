@@ -1,7 +1,7 @@
 package p1431
 
 import (
-	"github.com/lancelote/leetcode-go/utils/slice"
+	"github.com/lancelote/simple-cmp/cmp"
 	"testing"
 )
 
@@ -28,7 +28,7 @@ func Test_kidsWithCandies(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			result := kidsWithCandies(tt.candies, tt.extraCandies)
-			if diff := slice.Diff(tt.want, result); diff != "" {
+			if diff := cmp.Diff(tt.want, result); diff != "" {
 				t.Error(diff)
 			}
 		})
